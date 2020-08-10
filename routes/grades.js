@@ -1,13 +1,14 @@
 import express from "express";
 import { promises as fs} from "fs";
-import { createSecretKey } from "crypto";
+import winston from "winston";
 
 const {readFile, writeFile} = fs;
 
 const router = express.Router();
 
+
 //Assignment #1
-router.post("/", async(req, res) => {
+router.post("/", async(req, res, next) => {
     try{
         let grade = req.body;
         const data = JSON.parse(await readFile(global.fileName));
@@ -16,9 +17,12 @@ router.post("/", async(req, res) => {
         await writeFile(global.fileName, JSON.stringify(data, null, 2));
         res.send(data.grades.find(gr => gr.id === grade.id));
 
+        global.logger.info(`POST /grades`);
+
     }
     catch(err){
-        res.status(400).send({error: err.message});
+        console.log(err);
+        next(err);
     }
 });
 
@@ -29,7 +33,7 @@ router.post("/", async(req, res) => {
 // no registro, e realizar sua atualização com os novos dados alterados no arquivo
 // grades.json
 
-router.put("/", async (req, res) => {
+router.put("/", async (req, res, next) => {
     try {
         let grade = req.body;
         const data = JSON.parse(await readFile(global.fileName));
@@ -38,19 +42,20 @@ router.put("/", async (req, res) => {
             data.grades[index] = req.body;
             await writeFile(global.fileName, JSON.stringify(data, null, 2));
             res.send(data.grades[index]);
+            global.logger.info(`PUT /grades`);
         }
         else {
             res.send('This id was not found.');
         }
     }
     catch(err){
-        res.status(400).send({error: err.message});
+        next(err);
     }
 });
 
 // 3. Crie um endpoint para excluir uma grade. Este endpoint deverá receber como
 // parâmetro o id da grade e realizar sua exclusão do arquivo grades.json.
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req, res, next) => {
     try{
         const data = JSON.parse(await readFile(global.fileName));
         const gradeIndex = data.grades.findIndex(gr => gr.id === parseInt(req.params.id));
@@ -60,28 +65,29 @@ router.delete("/:id", async (req, res) => {
             await writeFile(global.fileName, JSON.stringify(data, null, 2));
             res.send(data);
             res.end();
+            global.logger.info(`DELETE /grades/:id`);
         }
         else {
             res.send('This id was not found.');
         }
     }
     catch(err){
-        res.status(400).send({ error: err.message});
+        next(err);
     }
 });
 
 
 // 4. Crie um endpoint para consultar uma grade em específico. Este endpoint deverá
 // receber como parâmetro o id da grade e retornar suas informações.
-router.get("/new/:id", async (req, res) => {
+router.get("/new/:id", async (req, res, next) => {
     try{
-        console.log('workingggg');
         const data = JSON.parse(await readFile(global.fileName));
         const grade = data.grades.find(grade => grade.id === parseInt(req.params.id));
         res.send(grade);
+        global.logger.info(`GET /grades/new/:id`);
     }
     catch(err){
-        res.status(400).send({ error: err.message});
+        next(err);
     }
 });
 
@@ -89,7 +95,7 @@ router.get("/new/:id", async (req, res) => {
 // endpoint deverá receber como parâmetro o student e o subject, e realizar a soma de
 // todas os as notas de atividades correspondentes a aquele subject para aquele student. O
 // endpoint deverá retornar a soma da propriedade value dos registros encontrados.
-router.get("/average", async (req, res) => {
+router.get("/average", async (req, res, next) => {
     try {
         const { student, subject } = req.body;
         const data = JSON.parse(await readFile(global.fileName));
@@ -101,7 +107,7 @@ router.get("/average", async (req, res) => {
         res.send(`${gradesSum}`);
     }
     catch (err) {
-        res.status(400).send({ error: err.message });
+        next(err);
     }
 });
 
@@ -111,7 +117,7 @@ router.get("/average", async (req, res) => {
 // e type informados, e dividindo pelo total de registros que possuem este mesmo subject e
 // type.
 
-router.get("/averageBySubjAndType", async (req, res) => {
+router.get("/averageBySubjAndType", async (req, res, next) => {
     try{
         const { subject, type } = req.body;
         const data = JSON.parse(await readFile(global.fileName));
@@ -127,7 +133,7 @@ router.get("/averageBySubjAndType", async (req, res) => {
         res.send(`${average}`);
     }
     catch(err){
-        res.status(400).send({ error: err.message });
+        next(err);
     }
 });
 
@@ -146,17 +152,23 @@ router.get("/highestGrades", async (req, res) => {
 });
 
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
     try{
         const  data = JSON.parse(await readFile(global.fileName));
         res.send(data.grades);
+        global.logger.info(`GET ALL GRADES /grades`);
     }
     catch(err){
-        res.status(400).send({ error: err.message});
+        next(err);
     }
 });
 
+//Error treatment
+router.use((err, req, res, next) => {
+    global.logger.error(`${req.method} ${req.baseUrl} - ${err.message}`);
+    res.status(400).send({error: err.message});
 
+});
 
 
 

@@ -1,0 +1,47 @@
+2020-08-10T20:50:44.749Z [challenge-module-2] info : API started
+2020-08-10T21:04:49.380Z [challenge-module-2] info : API started
+2020-08-10T21:04:50.833Z [challenge-module-2] error : ENOENT: no such file or directory, open 'aaaa.json'
+2020-08-10T21:11:06.618Z [challenge-module-2] info : API started
+2020-08-10T21:11:07.933Z [challenge-module-2] info : API started
+2020-08-10T21:11:09.175Z [challenge-module-2] info : API started
+2020-08-10T21:11:11.985Z [challenge-module-2] info : API started
+2020-08-10T21:11:14.012Z [challenge-module-2] info : API started
+2020-08-10T21:11:21.327Z [challenge-module-2] info : API started
+2020-08-10T21:11:24.790Z [challenge-module-2] info : API started
+2020-08-10T21:11:27.879Z [challenge-module-2] info : API started
+2020-08-10T21:11:30.856Z [challenge-module-2] error : POST /grades - ENOENT: no such file or directory, open 'aaaa.json'
+2020-08-10T21:12:14.690Z [challenge-module-2] info : API started
+2020-08-10T21:12:17.026Z [challenge-module-2] info : API started
+2020-08-10T21:12:23.961Z [challenge-module-2] info : API started
+2020-08-10T21:12:30.867Z [challenge-module-2] info : API started
+2020-08-10T21:12:39.897Z [challenge-module-2] info : API started
+2020-08-10T21:12:41.969Z [challenge-module-2] info : API started
+2020-08-10T21:12:46.544Z [challenge-module-2] info : API started
+2020-08-10T21:12:55.836Z [challenge-module-2] info : API started
+2020-08-10T21:13:01.430Z [challenge-module-2] info : API started
+2020-08-10T21:13:13.383Z [challenge-module-2] info : API started
+2020-08-10T21:13:21.315Z [challenge-module-2] info : API started
+2020-08-10T21:13:23.558Z [challenge-module-2] info : API started
+2020-08-10T21:13:25.420Z [challenge-module-2] info : API started
+2020-08-10T21:13:32.273Z [challenge-module-2] info : API started
+2020-08-10T21:13:37.581Z [challenge-module-2] error : POST /grades - The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+2020-08-10T21:13:37.927Z [challenge-module-2] info : API started
+2020-08-10T21:13:43.745Z [challenge-module-2] info : POST /grades - [object Object]
+2020-08-10T21:13:44.042Z [challenge-module-2] info : API started
+2020-08-10T21:14:09.495Z [challenge-module-2] info : API started
+2020-08-10T21:14:11.101Z [challenge-module-2] info : API started
+2020-08-10T21:18:51.056Z [challenge-module-2] info : API started
+2020-08-10T21:18:57.632Z [challenge-module-2] info : API started
+2020-08-10T21:19:04.880Z [challenge-module-2] info : API started
+2020-08-10T21:19:14.115Z [challenge-module-2] info : API started
+2020-08-10T21:19:17.557Z [challenge-module-2] info : API started
+2020-08-10T21:19:20.445Z [challenge-module-2] info : API started
+2020-08-10T21:19:57.497Z [challenge-module-2] info : API started
+2020-08-10T21:19:59.856Z [challenge-module-2] info : API started
+2020-08-10T21:20:01.405Z [challenge-module-2] info : API started
+2020-08-10T21:20:04.421Z [challenge-module-2] info : API started
+2020-08-10T21:20:10.284Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-10T21:20:33.063Z [challenge-module-2] info : API started
+2020-08-10T21:20:46.245Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-10T21:21:19.702Z [challenge-module-2] info : POST /grades
+2020-08-10T21:21:20.131Z [challenge-module-2] info : API started

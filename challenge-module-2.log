@@ -45,3 +45,72 @@
 2020-08-10T21:20:46.245Z [challenge-module-2] info : GET ALL GRADES /grades
 2020-08-10T21:21:19.702Z [challenge-module-2] info : POST /grades
 2020-08-10T21:21:20.131Z [challenge-module-2] info : API started
+2020-08-10T21:33:17.830Z [challenge-module-2] info : API started
+2020-08-10T21:33:22.976Z [challenge-module-2] info : API started
+2020-08-10T21:33:49.615Z [challenge-module-2] info : API started
+2020-08-10T21:33:50.944Z [challenge-module-2] info : API started
+2020-08-10T21:33:54.432Z [challenge-module-2] info : API started
+2020-08-10T21:34:37.176Z [challenge-module-2] info : API started
+2020-08-10T21:34:40.195Z [challenge-module-2] info : API started
+2020-08-10T21:35:00.771Z [challenge-module-2] info : API started
+2020-08-10T21:35:04.365Z [challenge-module-2] info : API started
+2020-08-10T21:35:08.073Z [challenge-module-2] info : API started
+2020-08-10T21:35:10.491Z [challenge-module-2] info : API started
+2020-08-10T21:35:12.021Z [challenge-module-2] info : API started
+2020-08-10T21:35:13.037Z [challenge-module-2] info : API started
+2020-08-10T21:35:14.943Z [challenge-module-2] info : API started
+2020-08-10T21:35:29.112Z [challenge-module-2] info : API started
+2020-08-10T21:35:31.362Z [challenge-module-2] info : API started
+2020-08-10T21:35:32.968Z [challenge-module-2] info : API started
+2020-08-10T21:35:50.708Z [challenge-module-2] info : POST /grades
+2020-08-10T21:35:51.107Z [challenge-module-2] info : API started
+2020-08-10T21:36:10.336Z [challenge-module-2] error : POST /grades - Student, subject, type and value are mandatory fields.
+2020-08-10T21:36:44.758Z [challenge-module-2] info : API started
+2020-08-10T21:36:48.645Z [challenge-module-2] info : API started
+2020-08-10T21:36:50.618Z [challenge-module-2] info : API started
+2020-08-10T21:37:00.610Z [challenge-module-2] info : API started
+2020-08-10T21:37:05.915Z [challenge-module-2] info : API started
+2020-08-10T21:37:06.411Z [challenge-module-2] error : POST /grades - Student, subject, type and value are mandatory fields.
+2020-08-10T21:37:20.172Z [challenge-module-2] error : POST /grades - Student, subject, type and value are mandatory fields.
+2020-08-10T21:37:26.083Z [challenge-module-2] info : POST /grades
+2020-08-10T21:37:26.535Z [challenge-module-2] info : API started
+2020-08-10T21:37:36.720Z [challenge-module-2] info : API started
+2020-08-11T01:20:23.452Z [challenge-module-2] info : API started
+2020-08-11T01:22:20.211Z [challenge-module-2] info : API started
+2020-08-11T01:22:22.948Z [challenge-module-2] info : API started
+2020-08-11T01:23:22.225Z [challenge-module-2] info : API started
+2020-08-11T01:23:40.040Z [challenge-module-2] info : API started
+2020-08-11T01:23:42.926Z [challenge-module-2] info : API started
+2020-08-11T01:24:16.298Z [challenge-module-2] info : API started
+2020-08-11T01:24:22.951Z [challenge-module-2] info : API started
+2020-08-11T01:24:24.357Z [challenge-module-2] info : API started
+2020-08-11T01:24:28.939Z [challenge-module-2] info : API started
+2020-08-11T01:24:32.456Z [challenge-module-2] info : API started
+2020-08-11T01:24:39.116Z [challenge-module-2] info : API started
+2020-08-11T01:25:17.316Z [challenge-module-2] error : PUT /grades - This id was not found.
+2020-08-11T01:25:35.958Z [challenge-module-2] info : PUT /grades
+2020-08-11T01:25:36.268Z [challenge-module-2] info : API started
+2020-08-11T01:26:09.319Z [challenge-module-2] error : PUT /grades - Student, subject, type and value are mandatory fields.
+2020-08-12T14:11:15.904Z [challenge-module-2] info : API started
+2020-08-12T14:11:59.985Z [challenge-module-2] info : API started
+2020-08-12T14:12:04.266Z [challenge-module-2] info : API started
+2020-08-12T14:12:08.014Z [challenge-module-2] info : API started
+2020-08-12T14:13:07.584Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:17:38.107Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:17:46.449Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:18:07.677Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:18:12.231Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:19:25.274Z [challenge-module-2] info : API started
+2020-08-12T14:20:21.881Z [challenge-module-2] info : API started
+2020-08-12T14:20:34.272Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:20:46.558Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:20:51.618Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:26:07.584Z [challenge-module-2] info : API started
+2020-08-12T14:26:29.626Z [challenge-module-2] info : API started
+2020-08-12T14:26:38.024Z [challenge-module-2] info : API started
+2020-08-12T14:26:50.203Z [challenge-module-2] info : API started
+2020-08-12T14:26:52.369Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:26:58.900Z [challenge-module-2] info : GET ALL GRADES /grades
+2020-08-12T14:29:00.989Z [challenge-module-2] info : API started
+2020-08-12T14:29:04.230Z [challenge-module-2] info : API started
+2020-08-12T14:29:16.948Z [challenge-module-2] info : GET ALL GRADES /grades

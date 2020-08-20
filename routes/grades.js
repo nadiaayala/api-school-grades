@@ -1,23 +1,38 @@
 import express from "express";
 import { promises as fs} from "fs";
 import winston from "winston";
+import cors from "cors";
 
 const {readFile, writeFile} = fs;
 
 const router = express.Router();
 
-
 //Assignment #1
 router.post("/", async(req, res, next) => {
     try{
         let grade = req.body;
-        const data = JSON.parse(await readFile(global.fileName));
-        grade = {id: data.nextId++, ...grade, timestamp: new Date()};
+        if(!grade.student || !grade.subject || !grade.type || !grade.value){
+            throw new Error("Student, subject, type and value are mandatory fields.");
+        }
+        else{
+            const data = JSON.parse(await readFile(global.fileName));
+            grade = {
+                id: data.nextId++,
+                student: grade.student,
+                subject: grade.subject,
+                type: grade.type,
+                value: grade.value,
+                timestamp: new Date()
+            };
+
         data.grades.push(grade);
         await writeFile(global.fileName, JSON.stringify(data, null, 2));
         res.send(data.grades.find(gr => gr.id === grade.id));
 
         global.logger.info(`POST /grades`);
+        }
+
+        
 
     }
     catch(err){
@@ -36,16 +51,22 @@ router.post("/", async(req, res, next) => {
 router.put("/", async (req, res, next) => {
     try {
         let grade = req.body;
-        const data = JSON.parse(await readFile(global.fileName));
-        const index = data.grades.findIndex(gr => gr.id === grade.id);
-        if (index > -1) {
-            data.grades[index] = req.body;
-            await writeFile(global.fileName, JSON.stringify(data, null, 2));
-            res.send(data.grades[index]);
-            global.logger.info(`PUT /grades`);
+        if (!grade.student || !grade.subject || !grade.type || !grade.value) {
+            throw new Error("Student, subject, type and value are mandatory fields.");
         }
         else {
-            res.send('This id was not found.');
+            const data = JSON.parse(await readFile(global.fileName));
+            const index = data.grades.findIndex(gr => gr.id === grade.id);
+
+            if (index > -1) {
+                data.grades[index] = req.body;
+                await writeFile(global.fileName, JSON.stringify(data, null, 2));
+                res.send(data.grades[index]);
+                global.logger.info(`PUT /grades`);
+            }
+            else {
+                throw new Error('This id was not found.');
+            }
         }
     }
     catch(err){
